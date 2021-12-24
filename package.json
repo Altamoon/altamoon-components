@@ -1,6 +1,6 @@
 {
   "name": "altamoon-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The common components for Altamoon and its plugins",
   "main": "npm/index.js",
   "scripts": {
