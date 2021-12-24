@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 
 const IntervalsWrapper = styled.div`
-  padding-bottom: 1rem;
   flex-wrap: nowrap!important;
   overflow: auto;  
 `;
@@ -20,12 +19,13 @@ const futuresIntervals: CandlestickChartInterval[] = [
 ];
 
 interface Props {
+  className?: string;
   value: CandlestickChartInterval;
   onChange: (v: CandlestickChartInterval) => void;
 }
 
-const Intervals = ({ value, onChange }: Props): ReactElement => (
-  <IntervalsWrapper className="nav nav-pills">
+const Intervals = ({ className, value, onChange }: Props): ReactElement => (
+  <IntervalsWrapper className={"nav nav-pills " + (className ?? '')}>
     {futuresIntervals.map((intervalsItem, index) => (
       <IntervalItem
         role="button"
