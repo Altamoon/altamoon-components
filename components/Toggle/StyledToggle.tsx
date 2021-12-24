@@ -58,7 +58,7 @@ export default styled.div`
     }
     & label .switch {
         transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
-        background-color: #555;
+        background-color: #444;
     }
     & label .switch::after {
         color: rgba(255, 255, 255, 1);
