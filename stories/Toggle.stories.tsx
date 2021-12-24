@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Toggle from '../components/Toggle';
+import { Toggle } from '../components';
+import './bootswatch-darkly.css';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -28,6 +29,8 @@ const Template = ({
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 Primary.args = {
   checkedLabel: 'Checked',
   uncheckedLabel: 'Unchecked',

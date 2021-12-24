@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-      "outDir": "./dist/",
+      "outDir": "./npm/",
       "noImplicitAny": true,
       "sourceMap": true,
       "module": "es6",
@@ -15,5 +15,8 @@
       "noImplicitReturns": true,
       "noFallthroughCasesInSwitch": true,
       "strict": true
-    }
+    },
+    "include": [
+      "components/**/*"
+    ],
   }

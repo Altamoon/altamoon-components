@@ -20,31 +20,32 @@ export default styled.div`
     & input[type="checkbox"][disabled] ~ label .switch {
         opacity: 0.4;
     }
-    & input[type="checkbox"]:checked ~ label .switch::after {
-        content: attr(data-checked);
-        left: 0;
-    }
     & input[type="checkbox"]:checked ~ label .switch::before {
         content: attr(data-unchecked);
+        left: 0;
+    }
+    & input[type="checkbox"]:checked ~ label .switch::after {
+        content: attr(data-checked);
     }
     & label {
         user-select: none;
         position: relative;
         display: flex;
         align-items: center;
+        color: #666;
     }
     & label .switch {
         position: relative;
     }
-    & label .switch::after {
-        content: attr(data-unchecked);
+    & label .switch::before {
+        content: attr(data-checked);
         position: absolute;
         top: 0;
         text-transform: uppercase;
         text-align: center;
     }
-    & label .switch::before {
-        content: attr(data-checked);
+    & label .switch::after {
+        content: attr(data-unchecked);
         position: absolute;
         z-index: 5;
         text-transform: uppercase;
@@ -55,52 +56,24 @@ export default styled.div`
     & input[type="checkbox"][disabled] ~ label {
         color: rgba(119, 119, 119, 0.5);
     }
-    & input[type="checkbox"]:focus ~ label .switch,
-    & input[type="checkbox"]:hover ~ label .switch {
-        background-color: var(--altamoon-toggle-sell-color);
-    }
-    & input[type="checkbox"]:focus ~ label .switch::before,
-    & input[type="checkbox"]:hover ~ label .switch::before {
-        color: #5e5e5e;
-    }
-    & input[type="checkbox"]:hover ~ label {
-        color: #6a6a6a;
-    }
-    & input[type="checkbox"]:checked ~ label:hover {
-        color: var(--altamoon-toggle-buy-color);
-    }
-    & input[type="checkbox"]:checked ~ label .switch {
-        background-color: var(--altamoon-toggle-buy-color);
-    }
-    & input[type="checkbox"]:checked ~ label .switch::before {
-        color: var(--altamoon-toggle-buy-color);
-    }
-    & input[type="checkbox"]:checked:focus ~ label .switch,
-    & input[type="checkbox"]:checked:hover ~ label .switch {
-        background-color: var(--altamoon-toggle-buy-color);
-    }
-    & input[type="checkbox"]:checked:focus ~ label .switch::before,
-    & input[type="checkbox"]:checked:hover ~ label .switch::before {
-        color: var(--altamoon-toggle-buy-color);
-    }
     & label .switch {
         transition: background-color 0.3s cubic-bezier(0, 1, 0.5, 1);
-        background: var(--altamoon-toggle-sell-color);
+        background-color: #444;
     }
     & label .switch::after {
         color: rgba(255, 255, 255, 1);
     }
-    & label .switch::before {
+    & label .switch::after {
         transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
         color: #777;
     }
-    & input[type="checkbox"]:focus ~ label .switch::before, & input[type="checkbox"]:hover ~ label .switch::before {
+    & input[type="checkbox"]:focus ~ label .switch::after, & input[type="checkbox"]:hover ~ label .switch::after {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
     }
-    & input[type="checkbox"]:checked ~ label .switch::before {
+    & input[type="checkbox"]:checked ~ label .switch::after {
         transform: translate3d(100%, 0, 0);
     }
-    & input[type="checkbox"]:checked:focus ~ label .switch::before, & input[type="checkbox"]:checked:hover ~ label .switch::before {
+    & input[type="checkbox"]:checked:focus ~ label .switch::after, & input[type="checkbox"]:checked:hover ~ label .switch::after {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
     }
     & label .switch {
@@ -108,14 +81,14 @@ export default styled.div`
         flex: 0 0 100%;
         border-radius: 4px;
     }
-    & label .switch::after {
+    & label .switch::before {
         left: 50%;
         font-size: 0.9rem;
         line-height: 44px;
         width: 50%;
         padding: 0 12px;
     }
-    & label .switch::before {
+    & label .switch::after {
         top: 2px;
         left: 2px;
         border-radius: 2px;
@@ -123,7 +96,17 @@ export default styled.div`
         line-height: calc(44px - 4px);
         font-size: 0.9rem;
     }
-    & label .switch:hover::before {
+    & label .switch:hover::after {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    & input[type="checkbox"] ~ label .switch::after {
+        background: var(--altamoon-toggle-sell-color);
+        color: #fff;
+    }
+
+    & input[type="checkbox"]:checked ~ label .switch::after {
+        background: var(--altamoon-toggle-buy-color);
+        color: #fff;
     }
 `;

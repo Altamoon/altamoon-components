@@ -2,16 +2,17 @@
   "name": "altamoon-components",
   "version": "0.0.0",
   "description": "The common components for Altamoon and its plugins",
-  "main": "index.js",
+  "main": "npm/index.js",
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook --output-dir docs",
     "test": "npm run lint-pure && tsc --noemit",
     "upgrade": "npx npm-check-updates -u -x eslint-config-airbnb-typescript && npm i --legacy-peer-deps && lerna exec -- npx npm-check-updates -u && lerna exec -- npm i",
     "lint-pure": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm run lint-pure -- --cache --fix",
-    "patch": "lerna run build && lerna version patch --yes && lerna publish from-package --yes",
-    "minor": "lerna run build && lerna version minor && lerna publish from-package"
+    "build": "tsc --declaration",
+    "patch": "npm run build && npm version patch && npm publish && npm run build-storybook && git commit -am 'chore: Build Storybook' && git push && git push --tags",
+    "minor": "npm run build && npm version minor && npm publish && npm run build-storybook && git commit -am 'chore: Build Storybook' && git push && git push --tags"
   },
   "repository": {
     "type": "git",
