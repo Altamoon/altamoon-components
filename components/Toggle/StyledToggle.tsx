@@ -65,7 +65,7 @@ export default styled.div`
     }
     & label .switch::after {
         transition: transform 0.3s cubic-bezier(0, 1, 0.5, 1);
-        color: #888;
+        color: #999;
     }
     & input[type="checkbox"]:focus ~ label .switch::after, & input[type="checkbox"]:hover ~ label .switch::after {
         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.4);
