@@ -101,12 +101,12 @@ export default styled.div`
     }
 
     & input[type="checkbox"] ~ label .switch::after {
-        background: var(--altamoon-toggle-sell-color);
+        background: var(--altamoon-toggle-buy-color);
         color: #fff;
     }
 
     & input[type="checkbox"]:checked ~ label .switch::after {
-        background: var(--altamoon-toggle-buy-color);
+        background: var(--altamoon-toggle-sell-color);
         color: #fff;
     }
 `;
