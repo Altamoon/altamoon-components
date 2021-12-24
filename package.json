@@ -11,8 +11,8 @@
     "lint-pure": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "npm run lint-pure -- --cache --fix",
     "build": "tsc --declaration",
-    "patch": "npm run build && npm version patch && npm publish && npm run build-storybook && git commit -am 'chore: Build Storybook' && git push && git push --tags",
-    "minor": "npm run build && npm version minor && npm publish && npm run build-storybook && git commit -am 'chore: Build Storybook' && git push && git push --tags"
+    "patch": "npm run build && npm version patch && npm publish && npm run build-storybook && (git commit -am 'chore: Build Storybook' || true) && git push && git push --tags",
+    "minor": "npm run build && npm version minor && npm publish && npm run build-storybook && (git commit -am 'chore: Build Storybook' || true) && git push && git push --tags"
   },
   "repository": {
     "type": "git",
