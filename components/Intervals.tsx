@@ -25,7 +25,7 @@ interface Props {
 }
 
 const Intervals = ({ className, value, onChange }: Props): ReactElement => (
-  <IntervalsWrapper className={"nav nav-pills " + (className ?? '')}>
+  <IntervalsWrapper className={`nav nav-pills ${className ?? ''}`}>
     {futuresIntervals.map((intervalsItem, index) => (
       <IntervalItem
         role="button"
