@@ -20,13 +20,16 @@ const futuresIntervals: CandlestickChartInterval[] = [
 
 interface Props {
   className?: string;
+  intervals?: string[];
   value: CandlestickChartInterval;
   onChange: (v: CandlestickChartInterval) => void;
 }
 
-const Intervals = ({ className, value, onChange }: Props): ReactElement => (
+const Intervals = ({
+  className, intervals, value, onChange,
+}: Props): ReactElement => (
   <IntervalsWrapper className={`nav nav-pills ${className ?? ''}`}>
-    {futuresIntervals.map((intervalsItem, index) => (
+    {(intervals as CandlestickChartInterval[] ?? futuresIntervals).map((intervalsItem, index) => (
       <IntervalItem
         role="button"
         tabIndex={index}
